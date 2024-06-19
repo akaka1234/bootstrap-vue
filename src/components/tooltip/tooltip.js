@@ -194,6 +194,7 @@ export const BTooltip = /*#__PURE__*/ extend({
       this.updateContent()
       // Pass down the scoped style attribute if available
       const scopeId = getScopeId(this) || getScopeId(this.bvParent)
+      console.log(this, scopeId)
       // Create the instance
       const $toolpop = (this.$_toolpop = createNewChildComponent(this, Component, {
         // Pass down the scoped style ID
