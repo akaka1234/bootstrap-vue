@@ -427,6 +427,8 @@ export const BVTooltip = /*#__PURE__*/ extend({
     // Show the tooltip
     show() {
       const target = this.getTarget()
+      console.log('3 ===============')
+      console.log(target)
       if (
         !target ||
         !contains(document.body, target) ||
@@ -549,12 +551,16 @@ export const BVTooltip = /*#__PURE__*/ extend({
     // --- Helper methods ---
     getTarget() {
       let { target } = this
+      console.log('8 &&&&&&&&&&&')
       if (isString(target)) {
         target = getById(target.replace(/^#/, ''))
+        console.log(target)
       } else if (isFunction(target)) {
         target = target()
+        console.log(target)
       } else if (target) {
         target = target.$el || target
+        console.log(target)
       }
       return isElement(target) ? target : null
     },
@@ -632,6 +638,8 @@ export const BVTooltip = /*#__PURE__*/ extend({
         .trim()
       // Update/add aria-described by
       setAttr(target, 'aria-describedby', desc)
+      console.log('4 ===============')
+      console.log(target)
     },
     removeAriaDescribedby() {
       // Remove aria-describedby on trigger element, without removing any other IDs
