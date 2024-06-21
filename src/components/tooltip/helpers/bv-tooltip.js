@@ -165,7 +165,11 @@ export const BVTooltip = /*#__PURE__*/ extend({
       return 'tooltip'
     },
     computedId() {
-      return this.id || `__bv_${this.templateType}_${this[COMPONENT_UID_KEY]}__`
+      const id = this.id || `__bv_${this.templateType}_${this[COMPONENT_UID_KEY]}__`
+      console.log('000000000')
+      console.log(id, this, this.id)
+      return id
+      // return this.id || `__bv_${this.templateType}_${this[COMPONENT_UID_KEY]}__`
     },
     computedDelay() {
       // Normalizes delay into object form
@@ -349,6 +353,9 @@ export const BVTooltip = /*#__PURE__*/ extend({
           boundaryPadding: toInteger(this.boundaryPadding, 0)
         }
       }))
+      console.log('1 ================')
+      console.log(container, Template, $tip)
+      console.log('2 ================')
       // We set the initial reactive data (values that can be changed while open)
       this.handleTemplateUpdate()
       // Template transition phase events (handled once only)
